@@ -1,0 +1,32 @@
+{{>layouts/header}}
+<div class="jumbotron">
+    <h1>게시물 목록</h1>
+    <br>
+    <a href="/articles/new" class="btn btn-primary btn-block">글추가</a>
+</div>
+
+<table class="table text-center table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>title</th>
+            <th>작성일</th>
+            <th>조회수</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#articles}}
+        <tr>
+            <td>{{id}}</td>
+            <td>
+                <a href="/articles/{{id}}">{{title}}</a>
+            </td>
+            <td>{{createdDate}}</td>
+            <td>{{cnt}}</td>
+
+        </tr>
+        {{/articles}}
+    </tbody>
+</table>
+
+{{>layouts/footer}}
