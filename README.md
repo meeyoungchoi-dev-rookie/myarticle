@@ -37,3 +37,12 @@
 * [h2-console 관련 설정](https://blog.naver.com/tkgksw/222102109020)
 
 
+#### 2020 10월 3일
+#####전체흐름 view -> dto -> controller -> entity -> service -> repository -> JPA -> DB
+
+>service의 목적
++ controller는 요청과 응답만 처리한다
++ 요청과 응답이외의 처리는 service한테 맡긴다
++ service가 repository에게 db에 접근해서 작업을 시키고 이를 수행하는 과정에서
+오류가 발생하는 경우 자동으로 rollback이 되도록 하기위해 @Transactional 어노테이션을 붙였다
++ 즉 service의 각 메서드가 하나의 트랜잭션으로 묶이는 것이다
