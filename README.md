@@ -8,6 +8,8 @@
 + Entity 객체 생성
 + 리파지토리를 통해 jpa를 사용하여 db에 값저장
 
+  *[create](https://blog.naver.com/tkgksw/222106734767)
+
 >게시글 조회
 + index.mustache에서 게시글 제목을 클릭하면 해당 게시글의 id값이 controller로 전달
 + 전달된 id값으로 리파지토리에서 findById()를 통해 해당 id값을 가진 entity객체를 반환함
@@ -38,7 +40,7 @@
 
 
 #### 2020 10월 3일
-#####전체흐름 view -> dto -> controller -> entity -> service -> repository -> JPA -> DB
+##### 전체흐름 view -> dto -> controller -> entity -> service -> repository -> JPA -> DB
 
 >service의 목적
 + controller는 요청과 응답만 처리한다

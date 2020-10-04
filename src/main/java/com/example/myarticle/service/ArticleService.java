@@ -44,11 +44,12 @@ public class ArticleService {
 
     @Transactional
     public Article update(Article entity, @PathVariable Long articleId) {
+        log.info("수정된 entity: " + entity.toString());
         Article article = articleRepository.findById(articleId).orElse(null);
 
         if (article != null) {
             article.rewrtie(entity.getTitle(), entity.getContent());
-
+            log.info("복사후: " + article.toString());
         }
         Article saved = articleRepository.save(article);
         log.info(saved.toString());
