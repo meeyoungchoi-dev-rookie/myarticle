@@ -2,10 +2,8 @@ package com.example.myarticle.entity;
 
 import lombok.Builder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Article  extends BaseTime {
@@ -18,6 +16,10 @@ public class Article  extends BaseTime {
     private String content;
 
     private int cnt;
+
+    //하나의 게시글에 여러 댓글이 달린다
+    @OneToMany
+    private List<Comment> commentList;
 
     public int getCnt() {
         return cnt;
@@ -81,5 +83,9 @@ public class Article  extends BaseTime {
                 ", content='" + content + '\'' +
                 ", cnt=" + cnt +
                 '}';
+    }
+
+    public void stickTo(Comment saved) {
+
     }
 }
