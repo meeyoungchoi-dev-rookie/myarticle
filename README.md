@@ -48,3 +48,14 @@
 + service가 repository에게 db에 접근해서 작업을 시키고 이를 수행하는 과정에서
 오류가 발생하는 경우 자동으로 rollback이 되도록 하기위해 @Transactional 어노테이션을 붙였다
 + 즉 service의 각 메서드가 하나의 트랜잭션으로 묶이는 것이다
+
+### 10월 6일
+>댓글 추가
++ @MayToOne 관계
++ 여러개의 댓글이 하나의 게시글에 연결될수 있다
++ @JoinColumn(name="article_id")
++ 댓글이 어떤 게시글에 달렸는지 알수 있게 fk로 articleId를 갖고있어야 한다
++ name 속성은 외래키를 매핑할때 사용한다
+
+### 참고자료
+* [댓글과 게시글 연관관계 정리](https://blog.naver.com/tkgksw/222102392250)
