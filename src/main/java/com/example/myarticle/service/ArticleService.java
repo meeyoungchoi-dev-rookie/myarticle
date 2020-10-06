@@ -29,9 +29,10 @@ public class ArticleService {
         if (article != null) {
             article.increase();
             article = articleRepository.save(article);
+            log.info(article.toString());
         }
 
-        log.info(article.toString());
+
 
         return article;
     }

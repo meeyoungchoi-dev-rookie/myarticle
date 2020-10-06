@@ -50,4 +50,18 @@ public class CommentController {
 
         return "redirect:/articles/" + comment.getArticle().getId();
     }
+
+
+    @PostMapping("/comments/{id}/update")
+    public String update(CommentForm commentForm) {
+        log.info("commentForm: " + commentForm.toString());
+
+        Comment comment = commentRepository.findById(commentForm.getId()).orElse(null);
+
+        comment.write(commentForm.getAuthor(), commentForm.getContent());
+
+        Comment saved  = commentRepository.save(comment);
+        log.info("saved:  " + saved.toString());
+        return "redirect:/articles/" + saved.getArticle().getId();
+    }
 }

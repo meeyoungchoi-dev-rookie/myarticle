@@ -3,12 +3,13 @@
     <h1>글 상세조회</h1>
 </div>
 
-<table class="table text-center table-hover">
-    <tbody>
-    {{#article}}
+{{#article}}
+    <table class="table text-center table-hover">
+        <tbody>
+
         <tr>
             <th>#</th>
-            <td>{{articleId}}</td>
+            <td>{{id}}</td>
         </tr>
         <tr>
             <th>제목</th>
@@ -24,13 +25,13 @@
         </tr>
 
 
+        </tbody>
 
-    {{/article}}
-    </tbody>
+    </table>
+    <a href="/articles/{{id}}/edit" class="btn btn-info btn-block">수정</a>
 
-</table>
+{{/article}}
 
-<button type="submit" onclick="location.href='/articles/{{articleId}}/edit'" class="btn btn-info btn-block">수정</button>
 <button type="submit" onclick="location.href='/articles'" class="btn btn-primary btn-block">목록으로</button>
 
 {{>comments/_comments}}

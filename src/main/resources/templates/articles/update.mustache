@@ -2,9 +2,10 @@
 <div class="jumbotron">
     <h1>글수정</h1>
 </div>
+{{#article}}
+    <form method="post" action="/articles/update/{{id}}" class="container mb-10">
 
-<form method="post" action="/articles/update/{{articleId}}" class="container mb-10">
-    {{#article}}
+
         <div class="form-group row">
             <label class="col-sm-2">제목</label>
             <div class="col-sm-10">
@@ -26,23 +27,25 @@
         <div class="form-group row">
             <label class="col-sm-2">최종수정시각</label>
             <div class="col-sm-10">
-                <input type="text" name="modifiedDate" value="{{modifiedDate}}" readonly="readonly" class="form-control">
+                <input type="text" name="modifiedDate" value="{{modifiedDate}}" readonly="readonly"
+                       class="form-control">
             </div>
         </div>
-    {{/article}}
-    <button type="submit" class="btn btn-info btn-block">
-        저장
-    </button>
+
+        <button type="submit" class="btn btn-info btn-block">
+            저장
+        </button>
 
 
-    <a href="/articles" class="btn btn-primary btn-block">
-        목록으로
-    </a>
-    <a  href="/articles/{{articleId}}/delete" class="btn btn-danger btn-block">
-        삭제
-    </a>
+        <a href="/articles" class="btn btn-primary btn-block">
+            목록으로
+        </a>
+        <a href="/articles/{{articleId}}/delete" class="btn btn-danger btn-block">
+            삭제
+        </a>
 
-</form>
+    </form>
+{{/article}}
 
 <div class="container mt-5px">
 

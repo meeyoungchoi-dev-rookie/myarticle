@@ -25,11 +25,11 @@ public class CommentService {
     public Comment insert(Comment comment, @PathVariable Long articleId) {
         //질문 Many가 기준인건가?
         //ManyToOne
-        //여러개의 댓글이 하나의 게시글에 연결된다
+        //여러개의 댓글에 하나의 게시글이 연결된다
         //게시글 정보가 필요하다
         Article article   = articleRepository.findById(articleId).orElse(null);
 
-        //여러개의 댓글이 하나의 게시글에 연결된다
+        //여러개의 댓글에 하나의 게시글이 연결된다
         comment.stickTo(article);
 
         log.info(comment.toString());

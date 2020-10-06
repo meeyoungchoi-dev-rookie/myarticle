@@ -47,6 +47,10 @@ public class ArticleController {
         log.info(article.toString());
 
         model.addAttribute("article", article);
+        model.addAttribute("comments", article.getComments());
+
+
+
         return "articles/show";
     }
 

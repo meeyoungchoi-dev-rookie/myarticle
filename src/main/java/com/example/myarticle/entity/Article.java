@@ -18,8 +18,8 @@ public class Article  extends BaseTime {
     private int cnt;
 
     //하나의 게시글에 여러 댓글이 달린다
-    @OneToMany
-    private List<Comment> commentList;
+    @OneToMany(mappedBy = "article")
+    private List<Comment> comments;
 
     public int getCnt() {
         return cnt;
@@ -57,7 +57,8 @@ public class Article  extends BaseTime {
     }
 
     @Builder
-    public Article(String title, String content) {
+    public Article(Long id, String title, String content) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.cnt = 0;
@@ -88,4 +89,10 @@ public class Article  extends BaseTime {
     public void stickTo(Comment saved) {
 
     }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+
 }

@@ -21,12 +21,17 @@ public class Comment extends BaseTime {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
-    @JoinColumn(name = "article_id")
+    @JoinColumn(name = "articleId")
     @ManyToOne
     private Article article;
 
 
     public void stickTo(Article article) {
         this.article = article;
+    }
+
+    public void write(String author, String content) {
+        this.author = author;
+        this.content = content;
     }
 }
