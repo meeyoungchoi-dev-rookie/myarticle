@@ -7,32 +7,29 @@
     <table class="table text-center table-hover">
         <tbody>
 
-        <tr>
-            <th>#</th>
-            <td>{{id}}</td>
-        </tr>
-        <tr>
-            <th>제목</th>
-            <td>{{title}}</td>
-        </tr>
-        <tr>
-            <th>내용</th>
-            <td>{{content}}</td>
-        </tr>
-        <tr>
-            <th>조회수</th>
-            <td>{{cnt}}</td>
-        </tr>
-
-
+            <tr>
+                <th>#</th>
+                <td>{{id}}</td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td>{{title}}</td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td>{{content}}</td>
+            </tr>
+            <tr>
+                <th>조회수</th>
+                <td>{{cnt}}</td>
+            </tr>
         </tbody>
-
     </table>
-    <a href="/articles/{{id}}/edit" class="btn btn-info btn-block">수정</a>
 
+    <a href="/articles/{{id}}/edit" class="btn btn-info btn-block">수정</a>
+    <a href="/articles" class="btn btn-primary btn-block">목록으로</a>
 {{/article}}
 
-<button type="submit" onclick="location.href='/articles'" class="btn btn-primary btn-block">목록으로</button>
 
 {{>comments/_comments}}
 
